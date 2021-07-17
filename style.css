@@ -1,0 +1,118 @@
+body{
+    background-color: yellow;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+}
+.header {
+    background-color: darkblue;
+    height: 5%;
+    position:sticky;
+    width: 100%;
+    
+
+    
+}
+
+.navigation {
+    background-color: darkkhaki;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "About Store Leer Leer Leer Leer Leer Leer Gmail Bilder Menu Anmelden";
+    
+}
+
+.navgridcontainer {
+    max-height: 100%;
+    position:absolute;
+}
+#navabout {
+    background-color: ivory;
+    grid-area: "About";
+    
+}
+#navstore {
+    background-color: lawngreen;
+    grid-area: Store;
+}
+#navgmail {
+    background-color: red;
+    grid-area: Gmail;
+}
+#navbilder {
+    background-color: blue;
+    grid-area: Bilder;
+}
+#navmenu {
+    background-color: blueviolet;
+    grid-area: Menu;
+}
+#navanmelden {
+    background-color: coral;
+    grid-area: Anmelden;
+    
+
+}
+#picanmelden {
+    border-radius: 100%;
+    border-color: rgb(53, 142, 172);
+    border-style: solid;
+    max-width: max-content; 
+    position: relative;
+    height: 50%;
+    width: 50%;
+    display: inline;
+    
+}
+
+.container{
+    text-align: center;
+
+    
+}
+#maincontainer {
+    background-color: grey;
+    height: 50%;
+    width: 50%;
+    display: grid;
+    top: 25%;
+    left: 25%;  
+    position: absolute;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "logo logo logo logo"
+    "text text text text"
+    "search search luck luck"
+}
+#logocontainer {
+    background-color: teal;
+    grid-area: logo;
+}
+#textcontainer{
+    background-color: green;
+    grid-area: text;
+}
+#searchbuttoncontainer{
+    background-color: blue;
+    grid-area: search;
+}
+#luckbuttoncontainer{
+    background-color: coral;
+    grid-area: luck;
+}
+
+footer {
+    position: absolute;
+    background-color:lightblue;
+    display:flex;
+    height: 5%;
+    width: 100%;
+    top: 95%;
+    flex-direction: row;
+
+
+}

@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html>
 <title>Nachbau der Google-Website</title>
-<link rel="stylesheet" href="reset.css">
-<link rel="stylesheet" href="style.css">
+
 <head>
-   
+    <!--Einbindung der Stylesheets-->
+    <!--link type="text/css" rel="stylesheet" href="reset.css"-->
+    <link type="text/css" rel="stylesheet" href="style.css"> 
 </head>
-<body></body>
+<body>
+    <header class="header">
+        <nav class="navigation"> 
+            <div class="navgridcontainer" id="navabout">Über Google</div>
+            <div class="navgridcontainer" id="navstore">Store</div>
+            <div class="navgridcontainer" id="navgmail">GMail</div>
+            <div class="navgridcontainer" id="navbilder">Bilder</div>
+            <div class="navgridcontainer" id="navmenu">
+                <img class="bild" id="appmenu" src="\img\1x\outline_apps_black_24dp.png" alt="Apps">
+            </div>
+            <div class="navgridcontainer" id="navanmelden" for="picanmelden">
+                <img class="bild" id="picanmelden" name ="picanmelden" src="\img\profil.png" alt="Anmelden">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container" id="maincontainer">
+            <div class="container" id="logocontainer">
+                <img class="bild" id="googlelogo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+            </div>
+            <div class="container" id="textcontainer" for="searchfield">
+                <input class="searchfield" name="searchfield" type="text">
+            </div>
+            <div class="container" id="searchbuttoncontainer">Searchbutton</div>
+            <div class="container" id="luckbuttoncontainer">Auf Gut Glück</div>
+        </div>
+    </main>
+    <footer>
+        <div class="footercontainer" id="werbeprogramme"></div>
+        <div class="footercontainer" id="unternehmen"></div>
+        <div class="footercontainer" id="wiefunktionierts"></div>
+        <div class="footercontainer" id ="co2"></div>
+        <div class="footercontainer" id="datenschutz"></div>
+        <div class="footercontainer" id="nutzungsbedingungen"></div>
+        <div class="footercontainer" id="einstellungen"></div>
+    </footer>
+</body>
 </html>
