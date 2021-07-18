@@ -1,48 +1,166 @@
 <!DOCTYPE html>
 <html>
-<title>Nachbau der Google-Website</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+        div {
+            text-align: center;
+            /*display: table-cell;*/
+            
+        }
+        .container {
+            border: dotted blue 2px;            
+        }
+        .nav-parent{
+            width: 99vw;
+            height: 5vh;
+            margin: 0;
+            padding: 0;
+            display:flex;
+            flex-flow: wrap;
+            justify-content:space-around;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-child {
+            margin: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-left: 6px;
+            padding-right: 6px;
+            
+        }
+        .group{
+            display: flex;
+            flex-direction: column;
+            flex-flow:wrap;
+            align-items: center;
+            
+            
 
+        }
+        #nav-group1{
+            flex: 1 ;
+            justify-content:left;
+            width: 100%;
+            height: 100%;
+        }
+        #nav-group2{
+            flex:2;
+            justify-content:right;
+            width: 100%;
+            height: 100%;
+        }
+
+        
+        #nav-aboutgoogle{
+            
+        }
+        #nav-store{
+
+        }
+        #nav-gmail{
+
+        }
+        #nav-bilder{
+
+        }
+        #nav-apps{
+            
+        }
+        #nav.apps > img {
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
+        }
+        #nav-anmelden{
+            padding: 0;
+            margin: 0;
+        }
+        #nav-anmelden > img  {
+            object-fit: cover;
+            min-width: 50px;
+            
+        }
+        #nav-profil-img {
+            height: 4vh;
+            width: 15%;
+            
+        }
+
+        
+        #maincontainer{
+            height: 50vh;
+            width: 50vw;
+            top: 25%;
+            left: 25%;
+            position: absolute;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-areas: 
+            "header header header header"
+            "sidebar text text bild"
+            "sidebar text text bild"
+            "sidebar text text bild";
+           
+            
+        }
+        #eins{
+            grid-area: header;
+            
+        }
+        #zwei{
+            grid-area: sidebar;
+            
+        }
+        #drei{  
+            grid-area: text;
+        
+        }
+        #drei > img {
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
+        }
+        #vier{
+            grid-area: bild;
+            
+        }
+
+    </style>
 <head>
-    <!--Einbindung der Stylesheets-->
-    <!--link type="text/css" rel="stylesheet" href="reset.css"-->
-    <link type="text/css" rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Google</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="navigation"> 
-            <div class="navgridcontainer" id="navabout">Über Google</div>
-            <div class="navgridcontainer" id="navstore">Store</div>
-            <div class="navgridcontainer" id="navgmail">GMail</div>
-            <div class="navgridcontainer" id="navbilder">Bilder</div>
-            <div class="navgridcontainer" id="navmenu">
-                <img class="bild" id="appmenu" src="\img\1x\outline_apps_black_24dp.png" alt="Apps">
-            </div>
-            <div class="navgridcontainer" id="navanmelden" for="picanmelden">
-                <img class="bild" id="picanmelden" name ="picanmelden" src="\img\profil.png" alt="Anmelden">
+    
+        <nav>
+            <div class="nav-parent">
+                <div class ="nav-child group" id="nav-group1"> 
+                    <div class="container nav-child" id="nav-aboutgoogle"> Über Google</div>
+                    <div class="container nav-child" id="nav-store">Store</div>
+                </div>
+                <div class="nav-child group" id="nav-group2">
+                    <div class="container nav-child" id="nav-gmail">Gmail</div>
+                    <div class="container nav-child" id="nav-bilder">Bilder</div>
+                    <div class="container nav-child" id="nav-apps"><img src="/img/1x/outline_apps_black_24dp.png" ></div>
+                    <div class="container nav-child" id="nav-anmelden"><img src="img/profil.png" id="nav-profil-img"></div>
+                </div>
             </div>
         </nav>
-    </header>
 
-    <main>
-        <div class="container" id="maincontainer">
-            <div class="container" id="logocontainer">
-                <img class="bild" id="googlelogo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
-            </div>
-            <div class="container" id="textcontainer" for="searchfield">
-                <input class="searchfield" name="searchfield" type="text">
-            </div>
-            <div class="container" id="searchbuttoncontainer">Searchbutton</div>
-            <div class="container" id="luckbuttoncontainer">Auf Gut Glück</div>
-        </div>
-    </main>
-    <footer>
-        <div class="footercontainer" id="werbeprogramme"></div>
-        <div class="footercontainer" id="unternehmen"></div>
-        <div class="footercontainer" id="wiefunktionierts"></div>
-        <div class="footercontainer" id ="co2"></div>
-        <div class="footercontainer" id="datenschutz"></div>
-        <div class="footercontainer" id="nutzungsbedingungen"></div>
-        <div class="footercontainer" id="einstellungen"></div>
-    </footer>
+<main>
+<div class="container" id="maincontainer">
+    <div class="container" id="eins">Eins</div>
+    <div class="container" id="zwei">Zwei</div>
+    <div class="container" id="drei"><img src="baum.jpg"></div>
+    <div class="container" id="vier">vier</div>
+</div>
+</main>
 </body>
 </html>
