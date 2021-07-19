@@ -1,118 +1,255 @@
-body{
-    background-color: yellow;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    font-family: arial,sans-serif;
-    font-size: 14px;
-}
-.header {
-    background-color: darkblue;
-    height: 5%;
-    position:sticky;
-    width: 100%;
-    
+html {
+    margin: 0;
+    padding: 0;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        text-align: center;            
+    }
+    button {
+        margin: 11px 4px;
+        padding: 0 16px;
+    }
+    .container {
+                  
+    }
+    .nav-parent{
+        width: 99vw;
+        height: 5vh;
+        margin: 0;
+        padding: 0;
+        display:flex;
+        flex-flow: wrap;
+        justify-content:space-around;
+        list-style: none;
+        align-items: center;
+    }
+    .nav-child {
+        margin: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        
+    }
+    .group{
+        display: flex;
+        flex-direction: column;
+        flex-flow:wrap;
+        align-items: center;
+        
+        
+
+    }
+    #nav-group1{
+        flex: 1 ;
+        justify-content:left;
+        width: 100%;
+        height: 100%;
+    }
+    #nav-group2{
+        flex:2;
+        justify-content:right;
+        width: 100%;
+        height: 100%;
+    }
+    #nav-apps > img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 100%;
+    }
+    #nav-anmelden{
+        padding: 0;
+        margin: 0;
+    }
+    #nav-anmelden > img  {
+        object-fit: cover;
+        min-width: 50px;
+        
+    }
+    #nav-profil-img {
+        height: 4vh;
+        width: 15%;
+        
+    }
 
     
-}
+    #maincontainer{
+        height: 50vh;
+        width: 50vw;
+        top: 15%;
+        left: 25%;
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "header header header header"
+        "header header header header"
+        "searchbar searchbar searchbar searchbar"
+        "searchbutton searchbutton luckbutton luckbutton";
+       
+        
+    }
+    #main-header{
+        grid-area: header;
+        
+    }
+    #main-header > img {
+        object-fit:scale-down;
+        width: 100%;
+        max-height: 100%;
+        object-position: bottom;
+        
+    }
+    #main-searchcontainer{
+        grid-area: searchbar;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        align-items: center;
+        
+    }
 
-.navigation {
-    background-color: darkkhaki;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(1;1fr);
-    grid-template-areas: "About Store Gmail Bilder Menu Anmelden";
+    #main-searchbar {
+        width: 50%;
+        height: 30%;
+        border: 1px solid #dfe1e5;
+        box-shadow: none;
+        border-radius: 24px;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: start;
+    }
+    #main-searchbar:hover {
+        box-shadow: 0 0 6px rgba(33,33,33,.2);  ;
+    }
+    #main-searchimg {
+        background-image: url("img/1x/outline_search_black_24dp.png");
+        width: 5%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+        background-blend-mode: soft-light;
+    }
+    #main-searchtext {
+        border: none;
+        width: 85%;
+        height: 90%;
+    }
+    #main-searchtext:focus{
+        border: none;
+        outline: none;
+        
+    }
+    #main-searchtext:focus ~ #main-searchdelete {
+        background-image: url("img/1x/outline_clear_black_24dp.png");
+    }
+    #main-searchdelete {
+        background-image: url("");
+        width: 5%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+        background-blend-mode: soft-light;
+    }
+    #main-searchbutton{  
+        grid-area: searchbutton;
+        display: flex;
+        flex-flow: column;
+        justify-content: right;
     
-}
+    }
+    #main-searchbuttonbt {
+        align-self: flex-end;
+        
+    }
+    #main-searchbuttonbutton {
+        background-color: #f8f9fa;
+        border: 1px solid #f8f9fa;
+        border-radius: 4px;
+        color: #3c4043;
+    }
+   
+    #main-luckbutton{
+        grid-area: luckbutton;
+        display: flex;
+        flex-flow: column;
+        justify-content: left;
+        
+    }
+    #main-luckbuttonbt {
+        align-self: flex-start;
+    }
+    #main-luckbuttonbutton {
+        background-color: #f8f9fa;
+        border: 1px solid #f8f9fa;
+        border-radius: 4px;
+        color: #3c4043;
+    }
 
-.navgridcontainer {
-    max-height: 100%;
-    position:absolute;
-    border: dashed blue 1px;
-}
-.navgridcontainer img {
-    width:100%;
-    max-height: 100%;
-    object-fit:cover;
-}
-#navabout {
-    background-color: ivory;
-    grid-area: "About";
+    #footer {
+        display: grid;
+        position: absolute;
+        top: 90vh;
+        height: 10vh;
+        width: 100vw;
+        background: #f2f2f2;
+        grid-row: repeat(2, 5vh);
+        grid-template-areas:
+        "footer1"
+        "footer2";    
+    }
+    #footer1{
+        grid-area: footer1;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: left;
+        align-content: center;
+    }
+    #footer2{
+        grid-area: footer2;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: left;
+        
+    }
+    #footer2left{
+        width: 33%;
+        display:flex;
+        flex-flow:wrap;
+        align-content: center;
+        justify-content: left;
+    }
+    #footer2middle{
+        width: 33%;
+        display:flex;
+        flex-flow:wrap;
+        align-content: center;
+        justify-content:center;
+    }
+    #footer2right{
+        width: 33%;
+        display:flex;
+        flex-flow:wrap;
+        align-content: center;
+        justify-content:right;
+    }
+    #footer-country, #footer-werbung, #footer-unternehmen, #footer-funktion, #footer-co2, #footer-datenschutz, #footer-nutzung, #footer-einstellung{
+      margin-left: 10px;
+      margin-right: 10px; 
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    #footer-co2 > img{
+        object-fit: scale-down;
+    }
     
-}
-#navstore {
-    background-color: lawngreen;
-    grid-area: Store;
-}
-#navgmail {
-    background-color: red;
-    grid-area: Gmail;
-}
-#navbilder {
-    background-color: blue;
-    grid-area: Bilder;
-}
-#navmenu {
-    background-color: blueviolet;
-    grid-area: Menu;
-}
-#navanmelden {
-    background-color: coral;
-    grid-area: Anmelden;
-    
-
-}
-
-    
-}
-
-.container{
-    text-align: center;
-
-    
-}
-#maincontainer {
-    background-color: grey;
-    height: 50%;
-    width: 50%;
-    display: grid;
-    top: 25%;
-    left: 25%;  
-    position: absolute;
-    grid-gap: 10px;
-    grid-template-areas: 
-    "logo logo logo logo"
-    "text text text text"
-    "search search luck luck"
-}
-#logocontainer {
-    background-color: teal;
-    grid-area: logo;
-}
-#textcontainer{
-    background-color: green;
-    grid-area: text;
-}
-#searchbuttoncontainer{
-    background-color: blue;
-    grid-area: search;
-}
-#luckbuttoncontainer{
-    background-color: coral;
-    grid-area: luck;
-}
-
-footer {
-    position: absolute;
-    background-color:lightblue;
-    display:flex;
-    height: 5%;
-    width: 100%;
-    top: 95%;
-    flex-direction: row;
-
-
-}
