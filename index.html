@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
     <style>
+        html {
+        margin: 0;
+        padding: 0;
+        }
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
+            margin: 0;
+            padding: 0;
         }
         div {
-            text-align: center;
-            /*display: table-cell;*/
-            
+            text-align: center;            
+        }
+        button {
+            margin: 11px 4px;
+            padding: 0 16px;
         }
         .container {
             border: dotted blue 2px;            
@@ -53,23 +61,6 @@
             width: 100%;
             height: 100%;
         }
-
-        
-        #nav-aboutgoogle{
-            
-        }
-        #nav-store{
-
-        }
-        #nav-gmail{
-
-        }
-        #nav-bilder{
-
-        }
-        #nav-apps{
-            
-        }
         #nav.apps > img {
             object-fit: cover;
             width: 100%;
@@ -94,43 +85,136 @@
         #maincontainer{
             height: 50vh;
             width: 50vw;
-            top: 25%;
+            top: 15%;
             left: 25%;
             position: absolute;
             display: grid;
-            grid-gap: 10px;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(4, 1fr);
             grid-template-areas: 
             "header header header header"
-            "sidebar text text bild"
-            "sidebar text text bild"
-            "sidebar text text bild";
+            "header header header header"
+            "searchbar searchbar searchbar searchbar"
+            "searchbutton searchbutton luckbutton luckbutton";
            
             
         }
-        #eins{
+        #main-header{
             grid-area: header;
             
         }
-        #zwei{
-            grid-area: sidebar;
-            
-        }
-        #drei{  
-            grid-area: text;
-        
-        }
-        #drei > img {
-            object-fit: cover;
+        #main-header > img {
+            object-fit:scale-down;
             width: 100%;
             max-height: 100%;
+            
         }
-        #vier{
-            grid-area: bild;
+        #main-searchcontainer{
+            grid-area: searchbar;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
             
         }
 
+        #main-searchbar {
+            width: 50%;
+            height: 30%;
+            border: 1px solid #dfe1e5;
+            box-shadow: none;
+            border-radius: 24px;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: start;
+        }
+        #main-searchbar:hover {
+            box-shadow: 0 0 6px rgba(33,33,33,.2);  ;
+        }
+        #main-searchimg {
+            background-image: url("img/1x/outline_search_black_24dp.png");
+            width: 5%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center;
+            background-blend-mode: soft-light;
+        }
+        #main-searchtext {
+            border: none;
+            width: 85%;
+            height: 90%;
+        }
+        #main-searchtext:focus{
+            border: none;
+            outline: none;
+            
+        }
+        #main-searchtext:focus ~ #main-searchdelete {
+            background-image: url("img/1x/outline_clear_black_24dp.png");
+        }
+        #main-searchdelete {
+            background-image: url("");
+            width: 5%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center;
+            background-blend-mode: soft-light;
+        }
+        #main-searchbutton{  
+            grid-area: searchbutton;
+            display: flex;
+            flex-flow: column;
+            justify-content: right;
+        
+        }
+        #main-searchbuttonbt {
+            align-self: flex-end;
+            
+        }
+        #main-searchbuttonbutton {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+        }
+       
+        #main-luckbutton{
+            grid-area: luckbutton;
+            display: flex;
+            flex-flow: column;
+            justify-content: left;
+            
+        }
+        #main-luckbuttonbt {
+            align-self: flex-start;
+        }
+        #main-luckbuttonbutton {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+        }
+
+        #footer {
+            display: flex;
+            position: absolute;
+            top: 90vh;
+            height: 10vh;
+            width: 100vw;
+            background: #f2f2f2;
+            flex-flow:wrap;
+            justify-content: space-between;
+
+
+        }
+        #footer-country{
+            width: 100%;
+            height: 50%;
+            flex:1;
+            text-align: left;
+        }
     </style>
 <head>
     <meta charset="UTF-8" />
@@ -156,11 +240,38 @@
 
 <main>
 <div class="container" id="maincontainer">
-    <div class="container" id="eins">Eins</div>
-    <div class="container" id="zwei">Zwei</div>
-    <div class="container" id="drei"><img src="baum.jpg"></div>
-    <div class="container" id="vier">vier</div>
+    <div class="container" id="main-header"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></div>
+    <div class="container" id="main-searchcontainer">
+        <div class="container" id="main-searchbar">
+            <div class="container" id="main-searchimg"> </div>
+            <input type ="text" id="main-searchtext">
+            <div class="container" id="main-searchdelete"></div>
+        </div>
+    </div>
+    <div class="container" id="main-searchbutton">
+        <div class="container" id="main-searchbuttonbt">
+            <button type="button" id="main-searchbuttonbutton">Google Suche</button>
+        </div> 
+    </div>
+    <div class="container" id="main-luckbutton">
+        <div class="container" id="main-luckbuttonbt">
+            <button type="button" id="main-luckbuttonbutton">Auf gut Glück</button>
+        </div>
+    </div>
 </div>
 </main>
+<footer>
+    <div class="container" id ="footer">
+        <div class="container" id="footer-country">Deutschland</div>
+        <div class="container" id="footer-werbung">Werbeprogramme</div>
+        <div class="container" id="footer-unternehmen">Unternehmen</div>
+        <div class="container" id="footer-funktion">Wie funktioniert die Google-Suche?</div>
+        <div class="container" id="footer-co2">C02-Neutral seit 2007</div>
+        <div class="container" id="footer-datenschutz">Datenschutzeklärung</div>
+        <div class="container" id="footer-nutzung">Nutzungsbedingungen</div>
+        <div class="container" id="footer-einstellungen">Einstellungen</div>
+    </div>
+
+</footer>
 </body>
 </html>
